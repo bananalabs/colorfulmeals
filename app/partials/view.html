@@ -1,0 +1,24 @@
+<nav class="navbar navbar-fixed-top title">
+    <div class="container">
+        <div class="heading">
+            <a class="heading-ref" ng-href="#/main" href="#/main">
+                <h2>Colorful Meals</h2>
+            </a>
+            <h5>Healthy Ingredients, Delicious Recipes</h5>
+        </div>
+    </div>
+</nav>
+
+<div class="container main-content" when-scrolled="view.loadMore()">
+    <h4 style="text-align: center">{{view.error}}</h4>
+    <div ng-repeat="recipe in view.recipes">
+        <div class="col-lg-2 col-md-4">
+            <div class="thumbnail" ng-click="view.getRecipeSource(recipe.id)">
+                <img style="width: 100%" ng-src={{recipe.imageUrlsBySize.90}}>
+                <div class="caption name">
+                    <h5>{{view.getRecipeName(recipe.recipeName)}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

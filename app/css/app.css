@@ -1,0 +1,60 @@
+/* app css stylesheet */
+
+.title
+{
+    background-color: #FF5E3A;
+}
+
+.heading
+{
+    color: white;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.heading-ref
+{
+    color: white !important;
+}
+
+.heading-ref:hover
+{
+    text-decoration: none;
+}
+
+.main-content
+{
+    margin-top: 125px;
+}
+
+.main-button
+{
+    background-color: #D35400 !important;
+    border-color: #D35400 !important;
+    margin-left:45%;
+    position: relative;
+}
+
+.thumbnail
+{
+    height: 90%;
+    position: relative;
+    cursor: pointer;
+}
+
+.name
+{
+    display: inline;
+    font-size: 18px;
+    line-height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.checkbox
+{
+    display: inline-block !important;
+    padding-left: 40px !important;
+}
+
+

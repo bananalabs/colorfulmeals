@@ -1,0 +1,84 @@
+<nav class="navbar navbar-fixed-top title">
+    <div class="container">
+        <div class="heading">
+            <h2>Colorful Meals</h2>
+            <h5>Healthy Ingredients, Delicious Recipes</h5>
+        </div>
+    </div>
+</nav>
+
+<div class="container main-content">
+    <div class="row text-center">
+        <div class="col-lg-3 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/veggies.jpg">
+                <div class="caption">
+                    <h3>Vegetables</h3>
+                    <input type="text" placeholder="beans, carrots, kale..."
+                           ng-model="main.ingredients.vegetables">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/fruits.jpg">
+                <div class="caption">
+                    <h3>Fruits</h3>
+                    <input type="text" placeholder="berries, kiwi, mango..."
+                           ng-model="main.ingredients.fruits">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/grains.jpg">
+                <div class="caption">
+                    <h3>Grains</h3>
+                    <input placeholder="bread, couscous, rice..."
+                           ng-model="main.ingredients.grains">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="thumbnail">
+                <img src="/images/protein.jpg">
+                <div class="caption">
+                    <h3>Protein</h3>
+                    <input type="text" placeholder="fish, eggs, chicken..."
+                           ng-model="main.ingredients.protein">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="main.options.lowcarb">
+                Low Carb
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="main.options.lowfat">
+                Low Fat
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="main.options.dairyfree">
+                Dairy Free
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="main.options.glutenfree">
+                Gluten Free
+            </label>
+        </div>
+    </div>
+</div>
+<div>
+    <button class="btn btn-primary btn-lg main-button" ng-click="main.submit()" type="button">Get Recipes</button>
+    <h4 style="text-align: center;"></h4>
+</div>
+<h4 style="text-align: center;">{{main.error}}</h4>
