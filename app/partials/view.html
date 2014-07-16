@@ -13,11 +13,13 @@
     <h4 style="text-align: center">{{view.error}}</h4>
     <div ng-repeat="recipe in view.recipes">
         <div class="col-lg-2 col-md-4">
-            <div class="thumbnail" ng-click="view.getRecipeSource(recipe.id)">
+            <div class="thumbnail" ng-click="view.getRecipeSource(recipe)">
+                <a ng-href="{{recipe.detailUrl}}" target="_blank">
                 <img style="width: 100%" ng-src={{recipe.imageUrlsBySize.90}}>
                 <div class="caption name">
                     <h5>{{view.getRecipeName(recipe.recipeName)}}</h5>
                 </div>
+                </a>
             </div>
         </div>
     </div>

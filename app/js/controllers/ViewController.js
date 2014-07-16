@@ -5,9 +5,11 @@ function ViewCtrl(RecipeService, $scope, $window) {
     this.recipes = []
     this.error = ""
     this.page = 0
+    //this.showDetail = false
     var params = RecipeService.getRecipeParameters()
     var ingredients = params.ingredients;
     var options = params.options;
+
 
     this.getRecipes = function(index) {
         $scope.promise = RecipeService.getRecipes(ingredients, options, index)
@@ -38,11 +40,11 @@ function ViewCtrl(RecipeService, $scope, $window) {
         return n
     }
 
-    this.getRecipeSource = function(id) {
-        $scope.promise = RecipeService.getRecipeSource(id)
+    this.getRecipeSource = function(recipe) {
+        $scope.promise = RecipeService.getRecipeSource(recipe.id)
         $scope.promise
             .then(function (data) {
-                $window.open(data.data.source.sourceRecipeUrl)
+                recipe.detailUrl = data.data.source.sourceRecipeUrl
             }, function (err) {
                 $scope.view.error = "Sorry, there are no recipes with these ingredients. Try again."
             });
