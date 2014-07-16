@@ -14,13 +14,19 @@ function ViewCtrl(RecipeService, $scope, $window) {
         $scope.promise
             .then(function (data) {
                 if (data.data.matches.length === 0) {
-                    $scope.view.error = "Sorry, there are no recipes with these ingredients. Try again."
+                    console.log('no matches')
+                    if ($scope.view.recipes.length == 0) {
+                        $scope.view.error = "Sorry, there are no recipes with these ingredients. Try again."
+                    }
                 } else {
                     $scope.view.error = ""
                     $scope.view.recipes = $scope.view.recipes.concat(data.data.matches)
                 }
             }, function (err) {
-                $scope.view.error = "Sorry, there are no recipes with these ingredients. Try again."
+                console.log(err)
+                if ($scope.view.recipes.length == 0) {
+                    $scope.view.error = "Sorry, there are no recipes with these ingredients. Try again."
+                }
             });
     }
 
