@@ -17,9 +17,18 @@ servicesModule.service('RecipeService', function($http) {
 
     this.getRecipes = function(ingredients, options, index) {
         var q = ""
+        var ingredient = ""
         for (var key in ingredients) {
-            q = q + ingredients[key] + "+"
+            ingredient = ingredients[key]
+            //Replace multiple spaces with a single space
+            ingredient = ingredient.replace(/\s+/g, ' ')
+            //Change "a,b" or "a, b" or "a b" to "a+b"
+            ingredient = ingredient.replace(', ', '+')
+            ingredient = ingredient.replace(',', '+')
+            ingredient = ingredient.replace(' ', '+')
+            q = q + ingredient + "+"
         }
+        console.log(q)
         if (options) {
             if (options.lowcarb === true) {
                 q = q + "&nutrition.CHOCDF.min=0&nutrition.CHOCDF.max=10"
